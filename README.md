@@ -1,7 +1,7 @@
 # BuzzScreen SDK Extension Guide
 
 - 버즈스크린을 안드로이드 애플리케이션에 연동하기 위한 라이브러리인 BuzzScreen SDK의 동작을 돕는 익스텐션 SDK로, 잠금화면 전용 애플리케이션에서 **별도 로그인을 구현하지 않는 경우** 사용합니다.
-- 주의: 잠금화면 전용 애플리케이션에서 로그인 기능을 구현하는 경우는 [BuzzScreen SDK 가이드(https://github.com/Buzzvil/buzzscreen-sdk-publisher/wiki)를 참고해 주세요.
+- 주의: 잠금화면 전용 애플리케이션에서 로그인 기능을 구현하는 경우는 [BuzzScreen SDK 가이드](https://github.com/Buzzvil/buzzscreen-sdk-publisher/wiki)를 참고해 주세요.
 - 주의: 구글 정책 변경으로 잠금화면 앱은 잠금화면 기능만을 수행해야 하므로 잠금화면 이외의 목적을 가진 애플리케이션에는 잠금화면을 넣을 수 없습니다. 새로 BuzzScreen을 연동하는 퍼블리셔가 아니라 기존에 미디어앱 내부에 BuzzScreen SDK를 연동했던 퍼블리셔들은 [마이그레이션 가이드](https://github.com/Buzzvil/buzzscreen-sdk-publisher-migration/wiki)를 참고해 주세요.
 - 안드로이드 버전 지원 : Android 4.0.3(API Level 15) 이상
     > 이하 로그인 기능이 포함된 미디어앱을 M(Main)앱으로 지칭하고, 별도 잠금화면 전용 애플리케이션을 L(LockScreen)앱으로 지칭합니다.
