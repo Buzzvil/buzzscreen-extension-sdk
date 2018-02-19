@@ -16,7 +16,7 @@
     > 샘플 앱은 다음 단계를 통해 실행해볼 수 있습니다.
     > 1. GitHub에서 전체 프로젝트를 클론 혹은 다운로드하고 압축을 풉니다.
     > 2. Android Studio 3 이상에서 File>New>Import Project에서 해당 소스를 엽니다.
-    > 3. 각 모듈의 android:value="<app_license>", android:value="<plist>" 를 발급받은 값으로 교체해주세요. 발급값이 없이 샘플 앱만 빌드하고 싶을 경우 값을 "" 처럼 비워도 됩니다. 변환 후 Gradle project sync를 다시 해주세요.
+    > 3. 각 모듈의 `android:value="<app_license>"`, `android:value="<plist>"` 를 발급받은 값으로 교체해주세요. 발급 값이 없이 샘플 앱만 빌드하고 싶을 경우 값을 "" 처럼 비워도 됩니다. 변환 후 Gradle project sync를 다시 해주세요.
     > 4. 필요한 모듈을 빌드합니다.
 - M앱과 L앱 모두 익스텐션 적용을 위한 추가 연동 작업이 있으며 다음 링크들을 통해 확인할 수 있습니다. 
 
