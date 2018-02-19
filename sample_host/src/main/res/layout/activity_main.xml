@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/app_name"
+            android:textSize="20sp"/>
+
+        <ToggleButton
+            android:id="@+id/login_toggle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textOff="Login"
+            android:textOn="Logout"/>
+
+        <LinearLayout
+            android:id="@+id/profile_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="8dp"
+                android:text="클릭해서 프로필 변경하기"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="16dp"/>
+
+            <TextView
+                android:id="@+id/profile_user_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/profile_birth_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/profile_gender"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/profile_region"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/controller_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/lockscreen_app_launch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="잠금화면 앱 사용하러 가기"/>
+
+            <!--<Button-->
+                <!--android:id="@+id/lockscreen_app_activation"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="잠금화면 앱 활성화하기"/>-->
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
