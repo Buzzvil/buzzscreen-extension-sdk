@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -26,7 +27,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:src="@drawable/logo_buzzscreen" />
+                android:src="@drawable/logo_buzzscreen"/>
 
         </FrameLayout>
 
@@ -42,7 +43,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/il_frame" />
+            android:src="@drawable/il_frame"/>
 
         <FrameLayout
             android:layout_width="wrap_content"
@@ -53,12 +54,12 @@
             <ProgressBar
                 android:id="@+id/main_top_loading"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"/>
 
             <ImageView
                 android:id="@+id/main_top_status"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"/>
 
         </FrameLayout>
 
@@ -71,7 +72,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="12dp"
-        android:textAlignment="center" />
+        android:textAlignment="center"/>
 
     <!-- Message -->
     <TextView
@@ -83,7 +84,7 @@
         android:layout_marginLeft="12dp"
         android:layout_marginRight="12dp"
         android:textAlignment="center"
-        android:visibility="gone" />
+        android:visibility="gone"/>
 
 
     <!-- Error Layout or Switch Layout -->
@@ -103,39 +104,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:padding="20dp"
-            android:textSize="17sp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/main_profile_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:background="?android:attr/selectableItemBackground"
-        android:clickable="true"
-        android:orientation="vertical"
-        android:padding="8dp">
-
-        <TextView
-            android:id="@+id/profile_user_id"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:id="@+id/profile_birth_year"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:id="@+id/profile_gender"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:id="@+id/profile_region"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:textSize="17sp"/>
 
     </LinearLayout>
 
@@ -159,7 +128,7 @@
                 android:layout_gravity="center_horizontal"
                 android:padding="20dp"
                 android:text="@string/main_switch_on"
-                android:textSize="17sp" />
+                android:textSize="17sp"/>
 
             <Button
                 android:id="@+id/main_switch_off"
@@ -170,7 +139,7 @@
                 android:padding="20dp"
                 android:text="@string/main_switch_off"
                 android:textColor="#000000"
-                android:textSize="17sp" />
+                android:textSize="17sp"/>
 
         </LinearLayout>
 
@@ -183,7 +152,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#1e000000" />
+                android:background="#1e000000"/>
 
             <Button
                 android:id="@+id/main_go_main"
@@ -192,7 +161,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:drawableLeft="@drawable/ic_bs_main_app"
-                android:text="@string/main_go_main" />
+                android:text="@string/main_go_main"/>
 
         </LinearLayout>
 

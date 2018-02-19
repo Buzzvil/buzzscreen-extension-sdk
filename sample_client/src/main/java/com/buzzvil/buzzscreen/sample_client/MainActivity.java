@@ -18,7 +18,6 @@ import android.widget.TextView;
 
 import com.buzzvil.buzzscreen.extension.BuzzScreenClient;
 import com.buzzvil.buzzscreen.sdk.BuzzScreen;
-import com.buzzvil.buzzscreen.sdk.UserProfile;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -35,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
 
     private View errorLayout;
     private View switchLayout;
-    private View profileLayout;
     private Button btnSwitchOn;
     private Button btnSwitchOff;
 
@@ -64,7 +62,6 @@ public class MainActivity extends AppCompatActivity {
 
         errorLayout = findViewById(R.id.main_error_layout);
         switchLayout = findViewById(R.id.main_switch_layout);
-        profileLayout = findViewById(R.id.main_profile_layout);
         btnSwitchOn = (Button) findViewById(R.id.main_switch_on);
         btnSwitchOff = (Button) findViewById(R.id.main_switch_off);
 
@@ -171,7 +168,6 @@ public class MainActivity extends AppCompatActivity {
         tvTitle.setText(R.string.main_loading);
         switchLayout.setVisibility(View.GONE);
         errorLayout.setVisibility(View.GONE);
-        profileLayout.setVisibility(View.GONE);
         topLayout.setBackgroundColor(getResources().getColor(R.color.topDark));
         pbLoading.setVisibility(View.VISIBLE);
     }
@@ -192,8 +188,6 @@ public class MainActivity extends AppCompatActivity {
         tvMessage.setVisibility(View.VISIBLE);
         switchLayout.setVisibility(View.VISIBLE);
         updateSwitchLayout();
-        profileLayout.setVisibility(View.VISIBLE);
-        updateProfileLayout();
     }
 
     private void updateSwitchLayout() {
@@ -211,14 +205,6 @@ public class MainActivity extends AppCompatActivity {
             tvTitle.setText(R.string.main_switch_off_status);
         }
         updateSnoozeMessage();
-    }
-
-    private void updateProfileLayout() {
-        UserProfile userProfile = BuzzScreen.getInstance().getUserProfile();
-        ((TextView) findViewById(R.id.profile_user_id)).setText("ID : " + userProfile.getUserId());
-        ((TextView) findViewById(R.id.profile_birth_year)).setText("Birth year : " + userProfile.getBirthYear());
-        ((TextView) findViewById(R.id.profile_gender)).setText("Gender : " + userProfile.getGender());
-        ((TextView) findViewById(R.id.profile_region)).setText("Region : " + userProfile.getRegion());
     }
 
     @Override

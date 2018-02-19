@@ -40,7 +40,6 @@ public class App extends Application {
             @Override
             public void onUserProfileUpdated(UserProfile userProfile) {
                 Log.i("MainApp", "ClientEventListener - onUserProfileUpdated");
-                updateProfile(userProfile.getBirthYear(), userProfile.getGender(), userProfile.getRegion());
             }
         });
 
@@ -58,11 +57,5 @@ public class App extends Application {
     public void logout() {
         PreferenceHelper.removeAll();
         BuzzScreenHost.logout();
-    }
-
-    public void updateProfile(int birthYear, String gender, String region) {
-        PreferenceHelper.putInt(PrefKeys.PREF_KEY_USER_BIRTH_YEAR, birthYear);
-        PreferenceHelper.putString(PrefKeys.PREF_KEY_USER_GENDER, gender);
-        PreferenceHelper.putString(PrefKeys.PREF_KEY_USER_REGION, region);
     }
 }
