@@ -1,4 +1,4 @@
-package com.buzzvil.sample_client;
+package com.buzzvil.buzzscreen.sample_client;
 
 import android.app.Application;
 import android.widget.Toast;
@@ -13,7 +13,7 @@ import com.buzzvil.buzzscreen.sdk.SimpleLockerActivity;
 
 public class App extends Application {
 
-    public static final String MAIN_APP_PACKAGE = "com.buzzvil.sample_host";
+    public static final String MAIN_APP_PACKAGE = "com.buzzvil.buzzscreen.sample_host";
 
     /**
      * 잠금화면을 켜기 위한 조건이 충족되지 않아서 Main 앱으로 유저를 이동시켜야 할 때 사용할 딥링크 설정

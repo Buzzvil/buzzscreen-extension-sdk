@@ -1,4 +1,4 @@
-package com.buzzvil.sample_host;
+package com.buzzvil.buzzscreen.sample_host;
 
 import android.app.Application;
 import android.text.TextUtils;
@@ -14,7 +14,7 @@ import com.buzzvil.buzzscreen.extension.UserProfile;
 
 public class App extends Application {
 
-    public static final String LOCKSCREEN_APP_PACKAGE = "com.buzzvil.sample_client";
+    public static final String LOCKSCREEN_APP_PACKAGE = "com.buzzvil.buzzscreen.sample_client";
 
     @Override
     public void onCreate() {

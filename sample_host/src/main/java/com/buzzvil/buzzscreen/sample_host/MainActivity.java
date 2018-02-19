@@ -1,4 +1,4 @@
-package com.buzzvil.sample_host;
+package com.buzzvil.buzzscreen.sample_host;
 
 import android.app.Activity;
 import android.app.AlertDialog;

@@ -1,4 +1,4 @@
-package com.buzzvil.sample_client;
+package com.buzzvil.buzzscreen.sample_client;
 
 
 class PrefKeys {

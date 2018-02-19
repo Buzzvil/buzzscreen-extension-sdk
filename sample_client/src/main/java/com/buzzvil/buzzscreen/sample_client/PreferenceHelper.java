@@ -1,4 +1,4 @@
-package com.buzzvil.sample_host;
+package com.buzzvil.buzzscreen.sample_client;
 
 import android.annotation.TargetApi;
 import android.content.Context;

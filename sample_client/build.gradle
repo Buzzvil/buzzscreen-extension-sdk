@@ -12,7 +12,7 @@ android {
 
     defaultConfig {
         manifestPlaceholders = [buzzScreenAppKey:"my_app_key"]
-        applicationId "com.buzzvil.sample_client"
+        applicationId "com.buzzvil.buzzscreen.sample_client"
         minSdkVersion 15
         targetSdkVersion 26
         versionCode 1

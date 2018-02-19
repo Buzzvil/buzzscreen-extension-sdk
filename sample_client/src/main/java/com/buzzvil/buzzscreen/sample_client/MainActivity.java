@@ -1,4 +1,4 @@
-package com.buzzvil.sample_client;
+package com.buzzvil.buzzscreen.sample_client;
 
 import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
@@ -11,13 +11,10 @@ import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
-import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.buzzvil.buzzscreen.extension.BuzzScreenClient;
 import com.buzzvil.buzzscreen.sdk.BuzzScreen;
