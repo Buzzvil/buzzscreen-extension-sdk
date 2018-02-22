@@ -78,7 +78,7 @@ public class MainActivity extends Activity {
             ((TextView) findViewById(R.id.profile_gender)).setText("Gender : " + gender);
 
             if (!PreferenceHelper.getBoolean(PrefKeys.PREF_KEY_BUZZSCREEN_USER_PROFILE_SET_DONE, false)) {
-                // 옛 버전에서 새 버전으로 업데이트를 했을 경우 처리
+                // when updating to new version
                 BuzzScreenHost.getUserProfile()
                         .setUserId(userId)
                         .setBirthYear(birthYear)

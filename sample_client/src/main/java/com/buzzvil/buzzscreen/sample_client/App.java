@@ -16,8 +16,8 @@ public class App extends Application {
     public static final String MAIN_APP_PACKAGE = "com.buzzvil.buzzscreen.sample_host";
 
     /**
-     * 잠금화면을 켜기 위한 조건이 충족되지 않아서 Main 앱으로 유저를 이동시켜야 할 때 사용할 딥링크 설정
-     * 설정되지 않았을 경우 Main 앱을 실행한다.
+     * Set a deeplink to use when moving the user to Main app because the conditions for turning on lockscreen are not met
+     * If not set, run Main app.
      */
     public static final String DEEP_LINK_ONBOARDING = "";
 
@@ -25,18 +25,25 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
 
+        // app_key : app key for SDK usage, check in your admin
+        // SimpleLockerActivity.class : Activity class of the lockscreen
+        // R.drawable.image_on_fail : An image that will be shown if there is no network error or temporarily no campaigns to show on the lockscreen.
         BuzzScreen.init("my_app_key", this, SimpleLockerActivity.class, R.drawable.image_on_fail);
 
+        // Initialization for BuzzScreenClient
+        // The example code uses com.buzzvil.buzzscreen.sample_host for M app package name.
         BuzzScreenClient.init(this, MAIN_APP_PACKAGE);
         BuzzScreenClient.setHostEventListener(new BuzzScreenClient.HostEventListener() {
             @Override
             public void onLogout() {
+                // When logout is called from M app
                 clearTermAgree();
             }
         });
         BuzzScreenClient.setOnDeactivatedByHostListener(new BuzzScreenClient.OnDeactivatedByHostListener() {
             @Override
             public void onDeactivated() {
+                // when L app lockscreen is disabled by M app.
                 Toast.makeText(App.this, R.string.app_deactivated_by_m, Toast.LENGTH_LONG).show();
             }
         });

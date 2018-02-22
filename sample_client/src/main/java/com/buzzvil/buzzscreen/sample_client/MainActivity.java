@@ -4,11 +4,13 @@ import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.text.format.DateFormat;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -91,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Adds this method to the activity that is executed first when the L app launches.
         BuzzScreen.getInstance().launch();
     }
 
@@ -101,6 +104,9 @@ public class MainActivity extends AppCompatActivity {
         buzzScreenClient.checkAvailability(new BuzzScreenClient.OnCheckAvailabilityListener() {
             @Override
             public void onAvailable() {
+                // Called when the buzz screen can be activated.
+                // Configure the flow required here to activate the lockscreen.
+                // Final lock screen activation works via BuzzScreen.getInstance().activate().
                 showSwitchLayout();
             }
 
@@ -210,6 +216,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
+
+        // Call to pause checkAvailability.
+        // onAvailable or onError is called unless stop here.
         buzzScreenClient.pause();
         if (dialog != null && dialog.isShowing()) {
             dialog.dismiss();
@@ -250,14 +259,30 @@ public class MainActivity extends AppCompatActivity {
         adb.show();
     }
 
-    // TODO localization
     private void updateSnoozeMessage() {
         if (BuzzScreen.getInstance().isSnoozed()) {
             int snoozeTo = BuzzScreen.getInstance().getSnoozeTo();
             Date dtSnoozeTo = new Date(snoozeTo * 1000L);
-            String time = new SimpleDateFormat("MMM d일 h:mm aa", Locale.getDefault()).format(dtSnoozeTo);
+            String dateTemplate;
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
+                dateTemplate = DateFormat.getBestDateTimePattern(Locale.getDefault(), "E d MMM h:mm aa");
+            } else {
+                Locale locale = Locale.getDefault();
+                if (locale.equals(Locale.KOREA)) {
+                    dateTemplate = "MMM d일 h:mm aa";
+                } else if (locale.equals(Locale.JAPAN)) {
+                    dateTemplate = "MMM d日 h:mm aa";
+                } else if (locale.equals(Locale.US)) {
+                    dateTemplate = "MMM d h:mm aa";
+                } else {
+                    dateTemplate = "d MMM h:mm aa";
+                }
+            }
+
+            String time = new SimpleDateFormat(dateTemplate, Locale.getDefault()).format(dtSnoozeTo);
             tvMessage.setVisibility(View.VISIBLE);
-            tvMessage.setText(time + "에 켜집니다");
+            tvMessage.setText(time + getString(R.string.main_snooze_on_time));
         } else {
             tvMessage.setVisibility(View.GONE);
         }
@@ -285,7 +310,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void showTermAgreeDialog() {
         dialog = new AlertDialog.Builder(MainActivity.this)
-                .setMessage("잠금화면 이용약관 동의")
+                .setMessage(getString(R.string.main_agree_message))
                 .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {

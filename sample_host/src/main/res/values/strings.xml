@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Main App(host)</string>
+    <string name="move_to_l_app">Go to lockscreen app</string>
 </resources>

@@ -10,6 +10,7 @@ android {
 
 
     defaultConfig {
+        // Please replace my_app_key with the app key provided for BuzzScreen integration process.
         manifestPlaceholders = [buzzScreenAppKey:"my_app_key"]
         applicationId "com.buzzvil.buzzscreen.sample_host"
         minSdkVersion 15
@@ -30,6 +31,6 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:26.1.0'
-
+    // Extension library for M app. Please take extra caution of the library name as it is different for L app.
     compile 'com.buzzvil.buzzscreen.ext:buzzscreen-host:0.9.0'
 }

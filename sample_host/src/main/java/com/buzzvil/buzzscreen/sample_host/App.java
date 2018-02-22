@@ -20,25 +20,30 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
 
+        // Initialization for BuzzScreenHost
+        // example code uses com.buzzvil.buzzscreen.sample_client for L app package name.
         BuzzScreenHost.init(this, LOCKSCREEN_APP_PACKAGE);
 
         // Optional
-        // L앱의 잠금화면이 활성화/비활성화되거나 L앱에서 유저 정보가 변경되는 경우 호출되는 리스너 등록 예시
+        // Example of registering listener called when Buzzscreen is activated/deactivated in L app, or user information of L app is changed
         BuzzScreenHost.setClientEventListener(new BuzzScreenHost.ClientEventListener() {
             @Override
             public void onActivated() {
+                // called when Buzzscreen is activated in L app
                 Log.i("MainApp", "ClientEventListener - onActivated");
                 Toast.makeText(App.this, "[Main app] Lockscreen App is activated", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onDeactivated() {
+                // called when Buzzscreen is deactivated in L app
                 Log.i("MainApp", "ClientEventListener - onDeactivated");
                 Toast.makeText(App.this, "[Main app] Lockscreen App is deactivated", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onUserProfileUpdated(UserProfile userProfile) {
+                // called when user information of L app is changed
                 Log.i("MainApp", "ClientEventListener - onUserProfileUpdated");
             }
         });
