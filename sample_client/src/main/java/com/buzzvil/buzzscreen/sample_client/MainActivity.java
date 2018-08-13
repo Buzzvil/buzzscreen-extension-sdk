@@ -104,11 +104,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        showLoading();
         checkAvailability();
     }
 
     private void checkAvailability() {
+        showLoading();
         buzzScreenClient.checkAvailability(new BuzzScreenClient.OnCheckAvailabilityListener() {
             @Override
             public void onAvailable() {
