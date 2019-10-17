@@ -6,7 +6,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.1'
+        classpath 'com.android.tools.build:gradle:3.5.0'
     }
 }
 
@@ -20,15 +20,14 @@ allprojects {
 }
 
 ext {
-    compileSdkVersion = 26
-    buildToolsVersion = '22.0.1'
+    compileSdkVersion = 29
     supportLibVersion = '26.0.2'
 
     minSdkVersion = 15
-    targetSdkVersion = 22
+    targetSdkVersion = 28
 
-    buzzscreenVersionName = '1.8.5.1'
-    buzzscreenVersionCode = 1851
+    buzzscreenVersionName = '2.0.4.6'
+    buzzscreenVersionCode = 2046
 
     buzzscreenGroupId = 'com.buzzvil'
     buzzscreenExtentionGroupId = 'com.buzzvil.buzzscreen.ext'
