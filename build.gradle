@@ -26,9 +26,6 @@ ext {
     minSdkVersion = 15
     targetSdkVersion = 28
 
-    buzzscreenVersionName = '2.0.4.6'
-    buzzscreenVersionCode = 2046
-
     buzzscreenGroupId = 'com.buzzvil'
     buzzscreenExtentionGroupId = 'com.buzzvil.buzzscreen.ext'
 }

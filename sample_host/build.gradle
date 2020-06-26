@@ -35,6 +35,6 @@ dependencies {
     // Extension library for M app. Please take extra caution of the library name as it is different for L app.
     implementation 'com.android.support:multidex:1.0.1'
 
-    implementation 'com.buzzvil:buzzscreen:2.0.4.6'
-    implementation 'com.buzzvil.buzzscreen.ext:buzzscreen-host:1.0.3.5'
+    implementation 'com.buzzvil:buzzscreen:2.0.6.3'
+    implementation 'com.buzzvil.buzzscreen.ext:buzzscreen-host:1.1.1.4'
 }
